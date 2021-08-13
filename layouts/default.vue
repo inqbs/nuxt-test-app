@@ -1,6 +1,6 @@
 <template>
   <main>
-    <b-navbar tag="header">
+    <b-navbar tag="header" class="border-bottom">
       <b-navbar-brand>Nuxt Test App</b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item to="/">Main </b-nav-item>
@@ -10,9 +10,9 @@
     <div class="container">
       <Nuxt />
     </div>
-    <footer class="bg-secondary">
+    <footer class="bg-secondary py-5">
       <b-container>
-        <address>test</address>
+        <address class="text-white">test</address>
       </b-container>
     </footer>
   </main>
