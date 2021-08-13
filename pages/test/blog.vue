@@ -4,7 +4,7 @@
       <b-list-group-item
         v-for="post in posts"
         :key="`post-${post.id}`"
-        :to="`/article/${post.id}`"
+        :to="`/test/article/${post.id}`"
       >
         {{ post.title }}
       </b-list-group-item>

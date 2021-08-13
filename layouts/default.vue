@@ -1,16 +1,20 @@
 <template>
   <main>
-    <header>
-      <b-navbar>
-        <b-navbar-nav>
-          <b-nav-item to="/">Main </b-nav-item>
-          <b-nav-item to="/blog">Blog </b-nav-item>
-          <b-nav-item to="/counter">Counter </b-nav-item>
-        </b-navbar-nav>
-      </b-navbar>
-    </header>
-    <Nuxt />
-    <footer>footer</footer>
+    <b-navbar tag="header">
+      <b-navbar-brand>Nuxt Test App</b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item to="/">Main </b-nav-item>
+        <b-nav-item to="/test">Test Page </b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+    <div class="container">
+      <Nuxt />
+    </div>
+    <footer class="bg-secondary">
+      <b-container>
+        <address>test</address>
+      </b-container>
+    </footer>
   </main>
 </template>
 
