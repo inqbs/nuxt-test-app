@@ -12,26 +12,26 @@
     </b-form>
     <section>
       <b-list-group>
-        <b-list-group-item v-for="msgObj in timeline" :key="msgObj.idx">
-          <p>{{ msgObj.msg }}</p>
-          <p class="d-flex justify-content-between">
-            <time
-              :datetime="$moment(msgObj.date).format('YYYY-MM-DD HH:mm:ss')"
-            >
-              {{ $moment(msgObj.date).format('YYYY-MM-DD HH:mm:ss') }}
-            </time>
-            <b-button variant="danger" @click="deleteMsg(msgObj.id)">
-              <b-icon-trash2-fill />
-            </b-button>
-          </p>
-        </b-list-group-item>
+        <SNSPost
+          v-for="msgObj in timeline"
+          :key="msgObj.id"
+          :msg-obj="msgObj"
+          :is-mine="msgObj.author === userId"
+          @delete="deleteMsg"
+        />
       </b-list-group>
     </section>
   </main>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import SNSPost from '@/components/SNSPost.vue'
+
 export default {
+  components: {
+    SNSPost,
+  },
   data: () => ({
     msg: '',
     list: [],
@@ -40,9 +40,15 @@ export default {
     this.refresh()
   },
   computed: {
+    ...mapGetters('auth', ['userId']),
     timeline() {
       return (this.list ?? []).reverse()
     },
+  },
+  errorCaptured(error, component, info) {
+    console.debug(`error captured on ${component?._name}'s ${info}.`, error)
+    this.isErrorOccured = true
+    return false
   },
   methods: {
     async refresh() {
@@ -54,14 +60,17 @@ export default {
       const msg = this.msg
       await this.$axios.post('//localhost:5000/posts', {
         msg,
+        author: this.userId,
         date: this.$moment(),
       })
       this.msg = ''
       this.refresh()
     },
-    async deleteMsg(idx) {
-      if (!idx) return
-      await this.$axios.delete(`//localhost:5000/posts/${idx}`)
+    async deleteMsg({ id, author }) {
+      console.log(`deleteMsg is fired. id:${id}, author: ${author}`)
+      if (!id) return
+      if (author !== this.userId) return
+      await this.$axios.delete(`//localhost:5000/posts/${id}`)
       this.refresh()
     },
   },
