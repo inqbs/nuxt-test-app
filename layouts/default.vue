@@ -4,6 +4,7 @@
       <b-navbar-brand>Nuxt Test App</b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item to="/">Main </b-nav-item>
+        <b-nav-item to="/calculator">calculator</b-nav-item>
         <b-nav-item to="/test">Test Page </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
