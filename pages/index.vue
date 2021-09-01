@@ -26,12 +26,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import SNSPost from '@/components/SNSPost.vue'
 
 export default {
-  components: {
-    SNSPost,
-  },
   data: () => ({
     msg: '',
     list: [],

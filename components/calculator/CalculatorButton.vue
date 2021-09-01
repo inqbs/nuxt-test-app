@@ -1,5 +1,7 @@
 <template>
-  <b-button block :variant="variant">{{ value }}</b-button>
+  <b-button block :variant="variant" @click="$emit('click', value)">
+    {{ value }}
+  </b-button>
 </template>
 
 <script>
