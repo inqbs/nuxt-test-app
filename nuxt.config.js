@@ -1,4 +1,13 @@
 export default {
+  /*
+    mode option
+    ssr: true && target: 'server' => SSR
+    ssr: false && target: 'server' => SPA
+    ssr: false && target: 'static' => SSG
+  */
+  ssr: false,
+  target: 'server',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-sample-project',
