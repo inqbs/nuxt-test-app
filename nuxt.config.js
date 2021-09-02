@@ -8,6 +8,9 @@ export default {
   ssr: false,
   target: 'server',
 
+  //  source directory
+  srcDir: 'src/',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-sample-project',
