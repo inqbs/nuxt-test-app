@@ -38,7 +38,7 @@ export default {
   computed: {
     ...mapGetters('auth', ['userId']),
     timeline() {
-      return (this.list ?? []).reverse()
+      return (this.list ?? [])?.reverse()
     },
   },
   errorCaptured(error, component, info) {
@@ -48,13 +48,11 @@ export default {
   },
   methods: {
     async refresh() {
-      this.list = await fetch('//localhost:5000/posts').then((res) =>
-        res.json()
-      )
+      this.list = await this.$axios.$get('//localhost:5000/posts')
     },
     async send() {
       const msg = this.msg
-      await this.$axios.post('//localhost:5000/posts', {
+      await this.$axios.$post('//localhost:5000/posts', {
         msg,
         author: this.userId,
         date: this.$moment(),
@@ -66,7 +64,7 @@ export default {
       console.log(`deleteMsg is fired. id:${id}, author: ${author}`)
       if (!id) return
       if (author !== this.userId) return
-      await this.$axios.delete(`//localhost:5000/posts/${id}`)
+      await this.$axios.$delete(`//localhost:5000/posts/${id}`)
       this.refresh()
     },
   },

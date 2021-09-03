@@ -26,8 +26,8 @@ export default {
     post: {},
   }),
   async fetch() {
-    this.post = await fetch(`https://api.nuxtjs.dev/posts/${this.idx}`).then(
-      (res) => res.json()
+    this.post = await this.$axios.$get(
+      `https://api.nuxtjs.dev/posts/${this.idx}`
     )
   },
 }

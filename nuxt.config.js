@@ -1,11 +1,11 @@
 export default {
   /*
-    mode option
-    ssr: true && target: 'server' => SSR
-    ssr: false && target: 'server' => SPA
-    ssr: false && target: 'static' => SSG
+    ### mode option
+    - SSR => ssr: true && target: 'server'
+    - SPA => ssr: false && target: 'server'
+    - SSG => ssr: false && target: 'static'
   */
-  ssr: false,
+  ssr: true,
   target: 'server',
 
   //  source directory
