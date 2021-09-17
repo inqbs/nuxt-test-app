@@ -39,6 +39,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     camelcase: 'warn',
+    'linebreak-style': ['warn', 'unix'],
     'prettier-vue/prettier': 'warn',
     'vue/order-in-components': 'warn',
     'vue/attributes-order': 'warn',
