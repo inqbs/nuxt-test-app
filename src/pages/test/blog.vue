@@ -14,11 +14,12 @@
 
 <script>
 export default {
-  data: () => ({
-    posts: [],
-  }),
-  async fetch() {
-    this.posts = await this.$axios.$get('https://api.nuxtjs.dev/posts')
+  layout: 'test',
+  async asyncData({ $axios }) {
+    const posts = await $axios.$get('https://api.nuxtjs.dev/posts')
+    return {
+      posts,
+    }
   },
 }
 </script>

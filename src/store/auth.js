@@ -7,8 +7,8 @@ export const state = () => ({
 })
 
 export const getters = {
-  isLoggedIn: (state) => !!state.user?.token,
-  userId: (state) => state.user.id,
+  isLoggedIn: state => !!state.user?.token,
+  userId: state => state.user.id,
 }
 
 export const actions = {

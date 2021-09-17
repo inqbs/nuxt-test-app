@@ -6,7 +6,7 @@ export default ({ store, req }) => {
   createPersistedState({
     paths: ['auth.user.id', 'auth.user.token'],
     storage: {
-      getItem: (key) => {
+      getItem: key => {
         if (process.server) {
           return cookie.parse(req?.headers?.cookie ?? '')?.[key]
         } else {
@@ -15,7 +15,7 @@ export default ({ store, req }) => {
       },
       setItem: (key, value) =>
         Cookies.set(key, value, { expires: 3, secure: false }),
-      removeItem: (key) => Cookies.remove(key),
+      removeItem: key => Cookies.remove(key),
     },
   })(store)
 }

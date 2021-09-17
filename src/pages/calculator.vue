@@ -86,7 +86,6 @@
 <script>
 import CalculatorButton from '@/components/calculator/CalculatorButton.vue'
 
-//  eslint-disable-next-line
 const COMMANDS = Object.freeze({
   PLUS: '+',
   MINUS: '-',

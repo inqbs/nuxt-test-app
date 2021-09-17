@@ -1,7 +1,9 @@
 <template>
   <div>
     <p>{{ counter }}</p>
-    <b-button @click="increment">add</b-button>
+    <b-button @click="increment">
+      add
+    </b-button>
   </div>
 </template>
 
@@ -9,6 +11,7 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
+  layout: 'test',
   computed: {
     ...mapState('counter', ['counter']),
   },

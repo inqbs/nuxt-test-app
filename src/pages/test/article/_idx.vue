@@ -1,10 +1,12 @@
 <template>
   <div>
-    <b-link to="/blog">return</b-link>
+    <b-link to="/blog">
+      return
+    </b-link>
     <b-card no-body>
       <b-row no-gutters>
         <b-col md="4">
-          <b-card-img :src="post.image"></b-card-img>
+          <b-card-img :src="post.image" />
         </b-col>
         <b-col>
           <b-card-body :title="post.title">
@@ -27,7 +29,7 @@ export default {
   }),
   async fetch() {
     this.post = await this.$axios.$get(
-      `https://api.nuxtjs.dev/posts/${this.idx}`
+      `https://api.nuxtjs.dev/posts/${this.idx}`,
     )
   },
 }
