@@ -5,7 +5,10 @@
         <b-input-group>
           <b-form-input v-model="msg" />
           <template #append>
-            <b-button type="submit" variant="primary">
+            <b-button
+              type="submit"
+              variant="primary"
+            >
               send
             </b-button>
           </template>

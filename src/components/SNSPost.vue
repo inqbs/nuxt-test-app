@@ -8,7 +8,11 @@
       <time :datetime="$moment(msgObj.date).format('YYYY-MM-DD HH:mm:ss')">
         {{ $moment(msgObj.date).format('YYYY-MM-DD HH:mm:ss') }}
       </time>
-      <b-button v-if="isMine" variant="danger" @click="$emit('delete', msgObj)">
+      <b-button
+        v-if="isMine"
+        variant="danger"
+        @click="$emit('delete', msgObj)"
+      >
         <b-icon-trash2-fill />
       </b-button>
     </p>

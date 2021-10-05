@@ -3,7 +3,11 @@
     <b-row class="pb-4">
       <b-col>
         <b-input-group>
-          <b-form-input :value="numValue" readonly class="text-right" />
+          <b-form-input
+            :value="numValue"
+            readonly
+            class="text-right"
+          />
           <b-input-group-append>
             <CalculatorButton value="←" />
           </b-input-group-append>
@@ -26,13 +30,22 @@
     </b-row>
     <b-row class="pb-2">
       <b-col>
-        <CalculatorButton :value="9" @click="onNumberClick" />
+        <CalculatorButton
+          :value="9"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton :value="8" @click="onNumberClick" />
+        <CalculatorButton
+          :value="8"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton :value="7" @click="onNumberClick" />
+        <CalculatorButton
+          :value="7"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
         <CalculatorButton value="-" />
@@ -40,13 +53,22 @@
     </b-row>
     <b-row class="pb-2">
       <b-col>
-        <CalculatorButton :value="6" @click="onNumberClick" />
+        <CalculatorButton
+          :value="6"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton :value="5" @click="onNumberClick" />
+        <CalculatorButton
+          :value="5"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton :value="4" @click="onNumberClick" />
+        <CalculatorButton
+          :value="4"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
         <CalculatorButton value="*" />
@@ -54,13 +76,22 @@
     </b-row>
     <b-row class="pb-2">
       <b-col>
-        <CalculatorButton :value="3" @click="onNumberClick" />
+        <CalculatorButton
+          :value="3"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton :value="2" @click="onNumberClick" />
+        <CalculatorButton
+          :value="2"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton :value="1" @click="onNumberClick" />
+        <CalculatorButton
+          :value="1"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
         <CalculatorButton value="/" />
@@ -68,10 +99,16 @@
     </b-row>
     <b-row class="pb-2">
       <b-col>
-        <CalculatorButton :value="0" @click="onNumberClick" />
+        <CalculatorButton
+          :value="0"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
-        <CalculatorButton value="00" @click="onNumberClick" />
+        <CalculatorButton
+          value="00"
+          @click="onNumberClick"
+        />
       </b-col>
       <b-col>
         <CalculatorButton value="." />

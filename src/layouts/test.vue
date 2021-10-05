@@ -1,6 +1,9 @@
 <template>
   <div>
-    <b-navbar tag="header" class="border-bottom">
+    <b-navbar
+      tag="header"
+      class="border-bottom"
+    >
       <b-navbar-brand>Nuxt Test App</b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item to="/">

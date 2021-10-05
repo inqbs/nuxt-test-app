@@ -5,8 +5,13 @@
     </section>
     <section>
       <b-table-simple>
-        <b-tr v-for="(csvData, idx) in csv.body" :key="`csv-${idx}`">
-          <td>{{ csvData.TYPE }}</td>
+        <b-tr
+          v-for="(csvData, idx) in csv.body"
+          :key="`csv-${idx}`"
+        >
+          <td>
+            {{ csvData.TYPE }}
+          </td>
           <td>
             {{ csvData.IS_LOGIN }}
           </td>

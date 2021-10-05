@@ -41,7 +41,8 @@ module.exports = {
     camelcase: 'warn',
     'linebreak-style': ['warn', 'unix'],
     'prettier-vue/prettier': 'warn',
-    'vue/order-in-components': 'warn',
-    'vue/attributes-order': 'warn',
+    'vue/html-indent': 'warn',
+    'vue/html-closing-bracket-newline': 'warn',
+    'vue/max-attributes-per-line': ['warn', {}],
   },
 }
